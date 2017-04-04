@@ -45,7 +45,6 @@ public class Graph {
 		graph.addEdge(1, 2);
 		graph.addEdge(2, 0);
 		graph.addEdge(2, 1);
-		graph.printGraph();
 	}
 
 }

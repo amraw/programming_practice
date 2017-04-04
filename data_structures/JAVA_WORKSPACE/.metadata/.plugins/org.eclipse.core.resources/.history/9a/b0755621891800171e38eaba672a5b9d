@@ -1,0 +1,30 @@
+package graphs;
+
+import java.util.*;
+
+public class Graph {
+	int V;
+	LinkedList<Integer> []adj;
+	
+	Graph( int V)
+	{
+		this.V=V;
+		adj = new LinkedList[V];
+		for(int i=0; i<V; i++)
+		{
+			adj[i] = new LinkedList<Integer>();
+		}
+	}
+	
+	void addEdge(int v, int w)
+	{
+		adj[]
+	}
+	
+	public static void main(String []args)
+	{
+		System.out.println("Hello world");
+	}
+
+}
+
