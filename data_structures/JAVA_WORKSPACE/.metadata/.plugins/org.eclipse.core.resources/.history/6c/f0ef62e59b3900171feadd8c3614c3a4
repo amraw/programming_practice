@@ -53,7 +53,7 @@ public int recursiveLisUtil(int []array, int last, int index)
 
 public static void recursiveLis2(int []array)
 {
-	recursiveLis2Util(array, array.length);
+	recursiveLis2Util(array, array.length-1);
 }
 
 public static int recursiveLis2Util(int []array, int n){

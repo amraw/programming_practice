@@ -60,9 +60,9 @@ public static int recursiveLis2Util(int []array, int n){
 	if(n==1)
 		return 1;
 	int current_subsequence_list=1;
-	for(int i=0; i<n-1; i++)
+	for(int i=1; i<n; i++)
 	{
-		int subsequence_lis = recursiveLis2Util(array,i+1);
+		int subsequence_lis = recursiveLis2Util(array,i);
 		if(array[i] < array[n-1] && current_subsequence_list< (1+subsequence_lis))
 			current_subsequence_list = 1 + subsequence_lis;
 		if(max_subsequence<current_subsequence_list)
