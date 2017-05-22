@@ -1,0 +1,12 @@
+package DP;
+
+public class editDistance {
+public int editDistanceCalculate(String str1, String str2, int size1, int size2)
+	if(size1< 0)
+		return size2;
+	else if(size2<0)
+		return size1;
+	else if(str1.charAt(size1) == str1.charAt(size2))
+		return editDistanceCalculate(str1,str2,size1-1, size2-1);
+}
+}
