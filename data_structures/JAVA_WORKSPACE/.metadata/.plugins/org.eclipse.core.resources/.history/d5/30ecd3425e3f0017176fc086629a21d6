@@ -1,0 +1,55 @@
+package graphs;
+
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class cycleInUnidirectedGraphUsingDFS {
+public int N;
+public LinkedList<Integer> adjList[];
+public cycleInUnidirectedGraphUsingDFS(int N)
+{
+	this.N = N;
+	adjList =  (LinkedList<Integer>[]) new LinkedList[N];
+	for(int i=0; i<N; i++)
+		adjList[i] = new LinkedList<Integer>();
+}
+public boolean isCycleUtil(int node, boolean visited[], int parent)
+{ 
+		visited[node] = true;
+		Iterator itr = adjList[node].iterator();
+		while(itr.hasNext())
+		{
+			int adjNode = (int) itr.next();
+			if(!visited[adjNode] && isCycleUtil(adjNode,visited,node))
+				return true;
+			if(visited[adjNode] && adjNode!=parent)
+				return true;
+		}
+		
+	return false;
+}
+
+public boolean isCycle()
+{
+	boolean visited[] = new boolean[N];
+	for(int i=0; i<N; i++)
+		visited[i] = false;
+	for(int i=0; i<N; i++)
+	{
+		if(!visited[N] && isCycleUtil(i,visited,-1))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+public void add(int x, int y){
+	adjList[x].add(y);
+	adjList[y].add(x);
+}
+
+
+
+}

@@ -1,0 +1,9 @@
+package graphs;
+
+
+import java.util.LinkedList;
+
+public class cycleInUnidirectedGraphUsingDFS {
+public int N;
+public LinkedList<Integer> adjList[];
+}
