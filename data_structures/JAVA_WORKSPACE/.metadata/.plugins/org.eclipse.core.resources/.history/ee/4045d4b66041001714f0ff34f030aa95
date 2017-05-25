@@ -102,9 +102,8 @@ public void kCoresOfUnidirectedGraphFind2(int k)
 				if(nodeDegree[adjNode] >=k)
 					System.out.print("->"+adjNode);
 			}
-			System.out.println("");
 		}
-		
+		System.out.println("");
 	}
 }
 
@@ -120,13 +119,13 @@ public boolean DFSUtil(int node, boolean []visited, int []nodeDegree, int k)
 			nodeDegree[adjNode]--;
 		if(!visited[adjNode])
 		{
-			if(DFSUtil(adjNode,visited,nodeDegree,k))
+			if(!DFSUtil(adjNode,visited,nodeDegree,k))
 				nodeDegree[adjNode]--;
 		}
 			
 		
 	}
-	return nodeDegree[node] < k;
+	return nodeDegree[node] > k;
 }
 
 
@@ -151,9 +150,8 @@ public static void main(String []args)
 	graph.addEdge(5, 8);
 	graph.addEdge(6, 7);
 	graph.addEdge(6, 8);
-	System.out.println("DFS ALGO 1");
-	graph.kCoresOfUnidirectedGraphFind2(3);
-	System.out.println("DFS ALGO 2");
+	System.out.print("DFS ALGO 1");
+	graph.kCoresOfUnidirectedGraphFind(3);
 	graph.kCoresOfUnidirectedGraphFind(3);
 	System.out.println("Second Input");
 	kCoresOfUnidirectedGraph graph2 =  new kCoresOfUnidirectedGraph(13);

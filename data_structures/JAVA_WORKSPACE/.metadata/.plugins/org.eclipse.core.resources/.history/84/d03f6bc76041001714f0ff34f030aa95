@@ -102,9 +102,8 @@ public void kCoresOfUnidirectedGraphFind2(int k)
 				if(nodeDegree[adjNode] >=k)
 					System.out.print("->"+adjNode);
 			}
-			System.out.println("");
 		}
-		
+		System.out.println("");
 	}
 }
 
@@ -120,13 +119,13 @@ public boolean DFSUtil(int node, boolean []visited, int []nodeDegree, int k)
 			nodeDegree[adjNode]--;
 		if(!visited[adjNode])
 		{
-			if(DFSUtil(adjNode,visited,nodeDegree,k))
+			if(!DFSUtil(adjNode,visited,nodeDegree,k))
 				nodeDegree[adjNode]--;
 		}
 			
 		
 	}
-	return nodeDegree[node] < k;
+	return nodeDegree[node] > k;
 }
 
 

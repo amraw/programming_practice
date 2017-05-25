@@ -70,66 +70,7 @@ public void kCoresOfUnidirectedGraphFind(int k)
 public void kCoresOfUnidirectedGraphFind2(int k)
 {
 	boolean visited[] = new boolean[N];
-	Arrays.fill(visited, false);
-	int minDeg = Integer.MAX_VALUE;
-	int nodeDegree[] = new int[N];
-	int startIndex = 0;
-	for(int i=0; i<N; i++)
-	{
-		nodeDegree[i] = adjList[i].size();
-		if(nodeDegree[i] < minDeg)
-		{
-			minDeg = nodeDegree[i];
-			startIndex=i;
-		}
-			
-	}
-	DFSUtil(startIndex,visited,nodeDegree,k);
-	
-	for(int i=0; i<N; i++)
-		if(!visited[i])
-			DFSUtil(i,visited,nodeDegree,k);
-	
-	for(int i=0; i<N; i++)
-	{
-		if(nodeDegree[i] >=k)
-		{
-			System.out.print("["+i+"]");
-			Iterator itr = adjList[i].iterator();
-			while(itr.hasNext())
-			{
-				int adjNode = (int) itr.next();
-				if(nodeDegree[adjNode] >=k)
-					System.out.print("->"+adjNode);
-			}
-			System.out.println("");
-		}
-		
-	}
 }
-
-public boolean DFSUtil(int node, boolean []visited, int []nodeDegree, int k)
-{
-	visited[node] = true;
-	Iterator itr = adjList[node].iterator();
-	while(itr.hasNext())
-	{
-		int adjNode = (int) itr.next();
-			
-		if(nodeDegree[node] < k)
-			nodeDegree[adjNode]--;
-		if(!visited[adjNode])
-		{
-			if(DFSUtil(adjNode,visited,nodeDegree,k))
-				nodeDegree[adjNode]--;
-		}
-			
-		
-	}
-	return nodeDegree[node] < k;
-}
-
-
 
 public static void main(String []args)
 {
@@ -151,9 +92,6 @@ public static void main(String []args)
 	graph.addEdge(5, 8);
 	graph.addEdge(6, 7);
 	graph.addEdge(6, 8);
-	System.out.println("DFS ALGO 1");
-	graph.kCoresOfUnidirectedGraphFind2(3);
-	System.out.println("DFS ALGO 2");
 	graph.kCoresOfUnidirectedGraphFind(3);
 	System.out.println("Second Input");
 	kCoresOfUnidirectedGraph graph2 =  new kCoresOfUnidirectedGraph(13);
