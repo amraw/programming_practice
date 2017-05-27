@@ -1,0 +1,15 @@
+package DP;
+
+public class minimumCostPath {
+public int mintCostPath(int [][]cost, int i, int j, int m, int n)
+{
+	if(i== m && i == n)
+		return cost[m][n];
+	else
+		return cost[i][j]+min(mintCostPath(cost,i+1,j,m,n),mintCostPath(cost,i,j+1,m,n),mintCostPath(cost,i+1,j+1,m,n));
+}
+public int min(int a, int b, int c)
+{
+	return Math.min(Math.min(a, b), c); 
+}
+}
