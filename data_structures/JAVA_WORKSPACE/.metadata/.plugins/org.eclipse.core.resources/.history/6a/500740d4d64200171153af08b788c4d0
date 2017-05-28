@@ -1,0 +1,25 @@
+package DP;
+
+public class coinChange {
+public static int findCoinChange(int coinValue[], int n){
+	int result = 0;
+	if(n < 0)
+		return 0;
+	else if(n == 0)
+		return 1;
+	else
+	{
+		for(int i=0; i < coinValue.length; i++)
+		{
+			result+=findCoinChange(coinValue, (n-coinValue[i]));
+		}
+	}
+	return result;
+}
+
+public static void main(String []args)
+{
+	int coinValue[] = new int[]{1,2,3};
+	System.out.println("Coin Change Values: "+findCoinChange(coinValue,4));
+}
+}
