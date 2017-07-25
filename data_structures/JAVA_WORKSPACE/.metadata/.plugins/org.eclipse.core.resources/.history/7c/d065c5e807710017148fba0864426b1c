@@ -1,0 +1,32 @@
+package DP;
+
+public class Fibonnacci {
+public static int fibonnacciRecursive(int N)
+{
+	if(N<=1)
+		return N;
+	else
+		return fibonnacciRecursive(N-1)+fibonnacciRecursive(N-2);
+}
+
+public static int DynamicSoution1(int N)
+{
+	if(N<=1)
+		return N;
+	else
+	{
+		int result[] = new int[N+1];
+		result[0] = 0;
+		result[1] = 1;
+		for(int i=2; i<=N; i++)
+			result[i] = result[i-1]+result[i-2];
+	}
+}
+
+public static void main(String []args)
+{
+	int N = 9;
+	System.out.println("Fibonnacci Recursion Answer:"+fibonnacciRecursive(N));
+}
+
+}

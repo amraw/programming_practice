@@ -2,7 +2,7 @@ package DP;
 
 public class matrixChainMultiplication {
 	
-public static int matrixMultiplicationRecur(int []p, int i, int j)
+int matrixMultiplicationRecur(int []p, int i, int j)
 {
 	int k;
 	int min = Integer.MAX_VALUE;
@@ -17,14 +17,6 @@ public static int matrixMultiplicationRecur(int []p, int i, int j)
 	}
 	
 	return min;
-}
-
-public static void main(String []args)
-{
-	int arr[] = new int[]{1,2,3,4};
-	System.out.println("Matrix chain multiplication: "+matrixMultiplicationRecur(arr,1,arr.length-1));
-	
-
 }
 
 }
