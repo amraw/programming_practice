@@ -26,21 +26,7 @@ public static int DynamicSoution1(int N)
 
 public static int DPSpaceOptimized(int N)
 {
-	int result = 0;
-	if(N<=1)
-		return N;
-	else
-	{
-		int secondLast = 0;
-		int firstLast = 1;
-		for(int i=2; i<=N; i++)
-		{
-			result = firstLast + secondLast;
-			secondLast = firstLast;
-			firstLast = result;
-		}
-	}
-	return result;
+	return 0;
 }
 
 public static void main(String []args)
@@ -48,7 +34,6 @@ public static void main(String []args)
 	int N = 9;
 	System.out.println("Fibonnacci Recursion Answer:"+fibonnacciRecursive(N));
 	System.out.println("Fibonnacci Dynamic Solution1:"+DynamicSoution1(N));
-	System.out.println("Fibonnacci Dynamic Solution with Space Optimization:"+DPSpaceOptimized(N));
 }
 
 }
