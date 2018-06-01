@@ -12,7 +12,7 @@ public boolean isBalanced(node root){
 	}
 	else
 	{
-		if(Math.abs(treeHeight(root.left) - treeHeight(root.right) ) < 1)
+		if(Math.abs(treeHeight(root.left) - treeHeight(root.right) ) < 1 && isBalanced(root.left) && isBalanced(root.right))
 		{
 			result=true;
 		}
